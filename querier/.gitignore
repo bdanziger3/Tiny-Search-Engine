@@ -1,0 +1,15 @@
+# ignore these files
+querier
+fuzzquery
+
+
+# ignore core files
+core
+*core*
+*.dSYM
+
+# ignore .o files
+*.o
+
+# ignore data files and testing data files
+

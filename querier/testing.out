@@ -1,0 +1,240 @@
+################# Tests on invalid command-line arguments #################
+Error: querier takes 2 arguments
+error code: 1
+
+Error: querier takes 2 arguments
+error code: 1
+
+Error: querier takes 2 arguments
+error code: 1
+
+Error: first argument must be a valid readable directory or error allocating memory
+error code: 2
+
+Error: second argument must be a valid pathname of an existent, readable index file
+error code: 3
+
+################# Test with pageDirectory argument with and without a slash '/' #################
+Query: hello or world
+Matches 3 documents (ranked):
+score  22 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+score  16 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+score   6 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+-----------------------------------------------
+error code: 0
+
+Query: hello or world
+Matches 3 documents (ranked):
+score  22 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+score  16 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+score   6 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+-----------------------------------------------
+error code: 0
+
+################# Tests on valid comman-line arguments but invalid queries #################
+Error: 'and' cannot be first
+error code: 0
+
+Error: 'or' cannot be first
+error code: 0
+
+Error: 'and' cannot be first
+error code: 0
+
+Error: 'and' cannot be first
+error code: 0
+
+Error: 'or' cannot be first
+error code: 0
+
+Error: 'and' cannot be last
+error code: 0
+
+Error: 'or' cannot be last
+error code: 0
+
+Error: 'and' and 'or' cannot be adjacent
+error code: 0
+
+Error: 'or' and 'and' cannot be adjacent
+error code: 0
+
+Error: 'and' and 'and' cannot be adjacent
+error code: 0
+
+Error: 'or' and 'or' cannot be adjacent
+error code: 0
+
+Error: bad character '5' in query
+error code: 0
+
+Error: bad character '?' in query
+error code: 0
+
+Error: bad character '-' in query
+error code: 0
+
+Error: bad character '.' in query
+error code: 0
+
+################# Tests on valid comman-line arguments and valid queries #################
+Query: hello or world
+Matches 3 documents (ranked):
+score  22 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+score  16 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+score   6 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+-----------------------------------------------
+error code: 0
+
+Query: asdfghhjkl
+No documents match.
+-----------------------------------------------
+error code: 0
+
+Query: dartmouth and asdfghhjkl
+No documents match.
+-----------------------------------------------
+error code: 0
+
+Query: dartmouth or asdfghhjkl
+Matches 3 documents (ranked):
+score 416 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+score   1 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+score   1 doc	  1: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+-----------------------------------------------
+error code: 0
+
+Query: computer science or football and game or rugby
+Matches 6 documents (ranked):
+score 170 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+score  10 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+score   4 doc	  3: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+score   4 doc	  2: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Linked_list.html
+score   1 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+score   1 doc	  1: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+-----------------------------------------------
+error code: 0
+
+################# monkey testing #################
+./fuzzquery: generating 20 queries from 6506 words
+symmetrically AND nicole 
+sources OR athletes jewelry OR numerous computable 
+neolithic stable OR largest 
+twice-damaged effective multitasking OR that OR world-paralyzing OR confessions 
+empty OR united tenth commons AND carlsson OR performing 
+export academics concepts newell OR resizing 
+reaching 
+beneficial packages OR hrvatski 
+disciples 
+crucial OR text OR recognizably AND ran AND discarding 
+utilities sherman decree 
+implicit AND performing dereferenced OR arr visionary 
+delegates AND clifford indicate AND Osage prevalently OR behalf 
+carvestrene OR quantum any wellman trustees OR sections 
+tries OR intuitive hierarchy OR nonstandard OR adversary 
+spalding 
+aisha OR arithmetic 
+wooden OR baseline AND inform 
+connections OR overinstruct OR hat AND cinchonism OR flags calculi 
+size Yahiya matlab square spongin 
+
+./fuzzquery: generating 20 queries from 6506 words
+Query: symmetrically and nicole
+No documents match.
+-----------------------------------------------
+Query: sources or athletes jewelry or numerous computable
+Matches 6 documents (ranked):
+score   6 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+score   2 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+score   2 doc	  3: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+score   2 doc	  2: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Linked_list.html
+score   1 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+score   1 doc	  5: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Unix.html
+-----------------------------------------------
+Query: neolithic stable or largest
+Matches 1 documents (ranked):
+score   3 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+-----------------------------------------------
+Error: bad character '-' in query
+Query: empty or united tenth commons and carlsson or performing
+Matches 5 documents (ranked):
+score  22 doc	  2: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Linked_list.html
+score   6 doc	  3: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+score   3 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+score   2 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+score   1 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+-----------------------------------------------
+Query: export academics concepts newell or resizing
+Matches 1 documents (ranked):
+score  20 doc	  3: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+-----------------------------------------------
+Query: reaching
+Matches 1 documents (ranked):
+score   1 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+-----------------------------------------------
+Query: beneficial packages or hrvatski
+Matches 5 documents (ranked):
+score   2 doc	  5: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Unix.html
+score   2 doc	  3: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+score   1 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+score   1 doc	  2: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Linked_list.html
+score   1 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+-----------------------------------------------
+Query: disciples
+Matches 1 documents (ranked):
+score   1 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+-----------------------------------------------
+Query: crucial or text or recognizably and ran and discarding
+Matches 6 documents (ranked):
+score  14 doc	  5: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Unix.html
+score  13 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+score  11 doc	  2: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Linked_list.html
+score  10 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+score  10 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+score   7 doc	  3: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+-----------------------------------------------
+Query: utilities sherman decree
+No documents match.
+-----------------------------------------------
+Query: implicit and performing dereferenced or arr visionary
+Matches 1 documents (ranked):
+score   2 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+-----------------------------------------------
+Query: delegates and clifford indicate and osage prevalently or behalf
+Matches 1 documents (ranked):
+score   1 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+-----------------------------------------------
+Query: carvestrene or quantum any wellman trustees or sections
+Matches 2 documents (ranked):
+score   2 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+score   1 doc	  5: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Unix.html
+-----------------------------------------------
+Query: tries or intuitive hierarchy or nonstandard or adversary
+Matches 2 documents (ranked):
+score   3 doc	  3: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+score   1 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+-----------------------------------------------
+Query: spalding
+Matches 1 documents (ranked):
+score   1 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+-----------------------------------------------
+Query: aisha or arithmetic
+Matches 3 documents (ranked):
+score   9 doc	  6: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+score   1 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+score   1 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+-----------------------------------------------
+Query: wooden or baseline and inform
+Matches 1 documents (ranked):
+score   1 doc	  4: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+-----------------------------------------------
+Query: connections or overinstruct or hat and cinchonism or flags calculi
+Matches 2 documents (ranked):
+score   1 doc	  7: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+score   1 doc	  5: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Unix.html
+-----------------------------------------------
+Query: size yahiya matlab square spongin
+No documents match.
+-----------------------------------------------
+error code: 0
+

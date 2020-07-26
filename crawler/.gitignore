@@ -1,0 +1,16 @@
+# ignore these files
+crawler
+DESIGN.md
+REQUIREMENTS.md
+
+# ignore core files
+core
+*.dSYM
+
+# ignore .o files
+*.o
+
+# ignore data files
+data/*
+data1/*
+data*/*

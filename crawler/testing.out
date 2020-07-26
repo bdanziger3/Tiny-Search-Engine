@@ -1,0 +1,89 @@
+data directory already exists, clearing directory
+####################################
+//////////Incorrect # of Arguments//////////
+Error: Crawler requires 3 arguments
+error code: 1
+# of files in data:
+0
+
+Error: Crawler requires 3 arguments
+error code: 1
+# of files in data:
+0
+
+Error: Crawler requires 3 arguments
+error code: 1
+# of files in data:
+0
+
+Error: Crawler requires 3 arguments
+error code: 1
+# of files in data:
+0
+
+####################################
+//////////URL Argument Tests//////////
+error code: 0
+# of files in data:
+0
+
+error code: 0
+# of files in data:
+0
+
+error code: 0
+# of files in data:
+0
+
+####################################
+//////////PageDirectory Argument Test//////////
+Error: Second Argument must be valid, writable directiory
+error code: 3
+# of files in data:
+0
+
+####################################
+//////////maxDepth Argument Tests//////////
+Error: Third Argument must be a valid non-negative integer
+error code: 4
+# of files in data:
+0
+
+Error: Third Argument must be a valid non-negative integer
+error code: 4
+# of files in data:
+0
+
+error code: 0
+# of files in data:
+8
+
+maxDepth argument too high, setting maxDepth to 10
+error code: 0
+# of files in data:
+9
+
+####################################
+//////////Test pageDirectory Argument with and without '/' //////////
+error code: 0
+# of files in data:
+3
+
+error code: 0
+# of files in data:
+3
+
+####################################
+///////////TESTING CRAWLER ON DIFFERENT URLs///////////
+error code: 0
+# of files in data1:
+9
+
+error code: 0
+# of files in data:
+3
+
+error code: 0
+# of files in data2:
+7
+

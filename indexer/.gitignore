@@ -1,0 +1,17 @@
+# ignore these files
+indexer
+indextest
+REQUIREMENTS.md
+indexsort.awk
+
+# ignore core files
+core
+*.dSYM
+
+# ignore .o files
+*.o
+
+# ignore data files and testing data files
+indexdata/*
+indextests/*
+tests/*
