@@ -1,0 +1,10 @@
+# ignore these files
+libcs50/libcs50.a
+
+# ignore all core files
+core
+*.dSYM
+
+# ignore data directory
+data/*
+
