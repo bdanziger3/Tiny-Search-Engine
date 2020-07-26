@@ -1,7 +1,10 @@
 # Blake Danziger
-## CS50 Spring 2020, Tiny Search Engine
+## Tiny Search Engine
 
-GitHub username: bdanziger3
+
+Runs a crawler, indexer, and querier on a web address to search contents of neighboring webpages.
+
+
 
 To build, run `make`.
 
